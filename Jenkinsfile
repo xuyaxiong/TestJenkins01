@@ -3,12 +3,13 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-//             steps {
+            steps {
 //                 bat 'gradlew build'
-//             }
-            sshagent (credentials: ['root']) {
-                sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 123.57.69.247 uname -a'
+                sshagent (credentials: ['root']) {
+                    sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 123.57.69.247 uname -a'
+                }
             }
+
         }
     }
 }
