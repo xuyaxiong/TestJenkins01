@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                cmd 'java -version'
+                sh 'java -version'
             }
         }
     }
