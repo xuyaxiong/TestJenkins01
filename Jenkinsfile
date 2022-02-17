@@ -13,4 +13,16 @@ pipeline {
 
         }
     }
+
+    post {
+        success {
+            echo 'this will run only if successful'
+        }
+        failure {
+            echo 'this will run only if failed'
+        }
+        always {
+            echo 'this will always runs'
+        }
+    }
 }
