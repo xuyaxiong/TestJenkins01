@@ -1,6 +1,8 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
         stage('Build') {
             steps {
@@ -8,7 +10,8 @@ pipeline {
 //                 sshagent (credentials: ['root']) {
 //                     sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 123.57.69.247 uname -a'
 //                 }
-                bat 'java -version'
+//                 bat 'java -version'
+                    sh 'node --version'
             }
 
         }
