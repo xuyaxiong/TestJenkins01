@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sshagent (credentials: ['root']) {
+                sshagent (credentials: ['xuyaxiong']) {
                     sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 123.57.69.247 uname -a'
                 }
 //                 bat 'java -version'
