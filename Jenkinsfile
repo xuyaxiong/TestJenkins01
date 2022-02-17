@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'gradlew build'
                 sshagent (credentials: ['root']) {
                     sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 123.57.69.247 uname -a'
                 }
