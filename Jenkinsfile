@@ -3,6 +3,7 @@ pipeline {
 //     agent {
 //         docker { image 'node' }
 //     }
+    agent any
     stages {
         stage('Build') {
             steps {
