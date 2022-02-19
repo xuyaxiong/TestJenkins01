@@ -4,11 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-
                 sh 'scp ./README.md root@123.57.69.247:/var/www/dev.platform.alphesh.com'
-
-//                 sh 'ssh -o StrictHostKeyChecking=no -l root 123.57.69.247 uname -a'
-                sh 'ssh -t root@123.57.69.247 "bash -c './deploy.sh'"'
             }
         }
     }
