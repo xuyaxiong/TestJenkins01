@@ -1,8 +1,7 @@
 // Jenkinsfile (Declarative Pipeline)
-properties([pipelineTriggers([cron('52 17 * * 1-5')])])
-
 pipeline {
     agent any
+    properties([pipelineTriggers([cron('0 18 * * 1-5')])])
     stages {
         stage('Build') {
             steps {
