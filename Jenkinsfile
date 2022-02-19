@@ -1,5 +1,5 @@
 // Jenkinsfile (Declarative Pipeline)
-properties([pipelineTriggers([cron('0 9 * * 1-5')])])
+properties([pipelineTriggers([cron('49 17 * * 1-5')])])
 
 pipeline {
     agent any
