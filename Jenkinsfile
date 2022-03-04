@@ -1,27 +1,21 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
-    // options {
-    //     pipelineTriggers([cron('0 18 * * 1-5')])
-    // }
     stages {
-        stage('Build') {
+        stage('Deploy') {
             steps {
-                echo 'test'
                 sh 'scp ./README.md root@123.57.69.247:/var/www/dev.platform.alphesh.com'
+                sh './deploy.sh'
             }
         }
     }
 
     post {
         success {
-            echo 'this will run only if successful'
+            echo 'successful'
         }
         failure {
-            echo 'this will run only if failed'
-        }
-        always {
-            echo 'this will always runs'
+            echo 'failed'
         }
     }
 }
