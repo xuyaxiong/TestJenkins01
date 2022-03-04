@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'test'
                 sh 'scp ./README.md root@123.57.69.247:/var/www/dev.platform.alphesh.com'
             }
         }
